@@ -4,9 +4,11 @@ function swap(valOne, valTwo) {
 
 function bubbleSort(array) {
   let swapped = null;
+
   for (let i = 0; i < array.length - 1; i++) {
     let tempArr = [array[0]]
     swapped = false;
+
     for (let j = 1; j < array.length - i; j++) {
       let valOne = tempArr.pop();
       let valTwo = array[j];
@@ -17,12 +19,15 @@ function bubbleSort(array) {
         swapped = true;
       }
     }
+
     tempArr.push(...array.slice(array.length - i));
+
     if (swapped == false) {
       return array;
     } else {
       array = tempArr;
     }
   }
+
   return array;
 }
